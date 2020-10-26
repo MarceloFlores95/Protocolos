@@ -13,8 +13,7 @@
 <h3>Endpoints: </h3>
 <h4>Profile:</h4>
 <p>To get all the information for the profile page we need this endpoint.</p>
-<p>We need the function isLoogedIn for validate that the user is loggin</p>
-<p>res.render will load all the information in the web page</p>
+
 <pre>
     <code>
         router.get('/', isLoggedIn,function(req, res, next) {});
