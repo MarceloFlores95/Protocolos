@@ -1,0 +1,403 @@
+<link rel='stylesheet' href='/stylesheets/profile.css' /> <!--84-->
+<const id = {{id}}/>
+
+<h1 class= "titleProfile">Welcome {{name}}</h1>
+{{!-- <p>You id is {{id}}</p> --}}
+
+<div>
+    <button onclick ="redirectAll()" type="submit" class="ableUsers"href="/allusers">See other users!</button>
+    <br>
+    <br>
+</div>
+
+<div id = "profileMenu">
+    <section id= "menu" class="vertical-menu">
+        <a href="javascript:void(0);" onclick="profileFetchSection(`{{id}}`) ">Profile</a>
+        <a href="javascript:void(0);" onclick="progressFetchSection(`{{id}}`)">Progress</a>
+        <a href="javascript:void(0);" onclick="routinesFetchSection(`{{id}}`)">Routines</a>
+        <a href="javascript:void(0);" onclick="exerciseFetchSection(`{{id}}`)">Exercise</a>
+        <a href="javascript:void(0);" onclick="goalFetchSection(`{{id}}`)">Goal</a>
+        <a href="javascript:void(0);" onclick="favoritesFetchSection(`{{id}}`)">Favorites</a>
+        <a href="javascript:void(0);" onclick="userLogOut()">Log Out</a>
+    </section>
+
+    <section class = "results">
+        
+    </section>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form action="" class ="modalUserInfo">
+                <label for="">Name:</label>
+                <input type="text" id="input-name" name="input-name" value="{{name}}" max="30"><br><br>
+
+                <label for="">Age:</label>
+                <input type="number" id="input-age" name="input-age" value={{age}}><br><br>
+
+                <label for="">Height:</label>
+                <input type="number" step="0.1" id="input-height" name="input-height" value={{height}}><br><br>
+
+                <label for="">Actual Weight:</label>
+                <input type="number" step="0.01" id="input-actual-weight" name="input-actual-weight" value={{actual_weight}}><br><br>
+
+                <label for="">Initial Weight:</label>
+                <input type="number" step="0.01" id="input-initial-weight" name="input-initial-weight" value={{initial_weight}}>
+                <label for="">*This is your weight in the moment you create an account.</label>
+                <br><br>
+                <button class = "save" onclick="saveNewInfo(`{{id}}`)"><span>Save</span></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- The Goal Modal -->
+    <div id="goalModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <form action="" class ="modalUserGoal">
+                <label for="">Goal:</label>
+                <input type="text" id="input-goal" name="input-goal" value="{{goal}}" max="30"><br><br>
+
+                <button onclick="saveNewGoal(`{{id}}`)">Save</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- The Create Routine Modal -->
+    <div id="createRoutineModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            
+            <form action="" class ="modalCreateRoutine">
+                <h3>We recomend to choose 2 muscles for each day.</h3>
+                
+                <label for="">Monday:</label>
+                <select id="First_Muscle_Monday" onchange="myExercise('First_Muscle_Monday','createMondayRoutine')">
+                    <option value="off">off</option>
+                    <option value="Bicep">Bicep</option>
+                    <option value="Tricep">Tricep</option>
+                    <option value="Abs">Abs</option>
+                    <option value="Chest">Chest</option>
+                    <option value="Back">Back</option>
+                    <option value="Legs">Legs</option>
+                </select>
+                <select id="Second_Muscle_Monday" onchange="myExercise('Second_Muscle_Monday','createMondayRoutine2')">
+                    <option value="off">off</option>
+                    <option value="Bicep">Bicep</option>
+                    <option value="Tricep">Tricep</option>
+                    <option value="Abs">Abs</option>
+                    <option value="Chest">Chest</option>
+                    <option value="Back">Back</option>
+                    <option value="Legs">Legs</option>
+                </select>
+                <br>
+                <section id = "createMondayRoutine">
+
+                </section>
+                <section id = "createMondayRoutine2">
+
+                </section>
+                <br>
+                <label for="">Tuesday:</label>
+                <select id="First_Muscle_Tuesday" onchange="myExercise('First_Muscle_Tuesday','createTuesdayRoutine')">
+                    <option value="off">off</option>
+                    <option value="Bicep">Bicep</option>
+                    <option value="Tricep">Tricep</option>
+                    <option value="Abs">Abs</option>
+                    <option value="Chest">Chest</option>
+                    <option value="Back">Back</option>
+                    <option value="Legs">Legs</option>
+                </select>
+                <select id="Second_Muscle_Tuesday" onchange="myExercise('Second_Muscle_Tuesday','createTuesdayRoutine2')">
+                    <option value="off">off</option>
+                    <option value="Bicep">Bicep</option>
+                    <option value="Tricep">Tricep</option>
+                    <option value="Abs">Abs</option>
+                    <option value="Chest">Chest</option>
+                    <option value="Back">Back</option>
+                    <option value="Legs">Legs</option>
+                </select>
+                <br>
+                <section id = "createTuesdayRoutine">
+
+                </section>
+                <section id = "createTuesdayRoutine2">
+
+                </section>
+                <br>
+                <label for="">Wednesday:</label>
+                <select id="First_Muscle_Wednesday" onchange="myExercise('First_Muscle_Wednesday','createWednesdayRoutine')">
+                    <option value="off">off</option>
+                    <option value="Bicep">Bicep</option>
+                    <option value="Tricep">Tricep</option>
+                    <option value="Abs">Abs</option>
+                    <option value="Chest">Chest</option>
+                    <option value="Back">Back</option>
+                    <option value="Legs">Legs</option>
+                </select>
+                <select id="Second_Muscle_Wednesday" onchange="myExercise('Second_Muscle_Wednesday','createWednesdayRoutine2')">
+                    <option value="off">off</option>
+                    <option value="Bicep">Bicep</option>
+                    <option value="Tricep">Tricep</option>
+                    <option value="Abs">Abs</option>
+                    <option value="Chest">Chest</option>
+                    <option value="Back">Back</option>
+                    <option value="Legs">Legs</option>
+                </select>
+                <br>
+                <section id = "createWednesdayRoutine">
+
+                </section>
+                <section id = "createWednesdayRoutine2">
+
+                </section>
+                <br>
+                <label for="">Thursday:</label>
+                <select id="First_Muscle_Thursday" onchange="myExercise('First_Muscle_Thursday','createThursdayRoutine')">
+                    <option value="off">off</option>
+                    <option value="Bicep">Bicep</option>
+                    <option value="Tricep">Tricep</option>
+                    <option value="Abs">Abs</option>
+                    <option value="Chest">Chest</option>
+                    <option value="Back">Back</option>
+                    <option value="Legs">Legs</option>
+                </select>
+                <select id="Second_Muscle_Thursday" onchange="myExercise('Second_Muscle_Thursday','createThursdayRoutine2')">
+                    <option value="off">off</option>
+                    <option value="Bicep">Bicep</option>
+                    <option value="Tricep">Tricep</option>
+                    <option value="Abs">Abs</option>
+                    <option value="Chest">Chest</option>
+                    <option value="Back">Back</option>
+                    <option value="Legs">Legs</option>
+                </select>
+                <br>
+                <section id = "createThursdayRoutine">
+
+                </section>
+                <section id = "createThursdayRoutine2">
+
+                </section>
+                <br>
+                <label for="">Friday:</label>
+                <select id="First_Muscle_Friday" onchange="myExercise('First_Muscle_Friday','createFridayRoutine')">
+                    <option value="off">off</option>
+                    <option value="Bicep">Bicep</option>
+                    <option value="Tricep">Tricep</option>
+                    <option value="Abs">Abs</option>
+                    <option value="Chest">Chest</option>
+                    <option value="Back">Back</option>
+                    <option value="Legs">Legs</option>
+                </select>
+                <select id="Second_Muscle_Friday" onchange="myExercise('Second_Muscle_Friday','createFridayRoutine2')">
+                    <option value="off">off</option>
+                    <option value="Bicep">Bicep</option>
+                    <option value="Tricep">Tricep</option>
+                    <option value="Abs">Abs</option>
+                    <option value="Chest">Chest</option>
+                    <option value="Back">Back</option>
+                    <option value="Legs">Legs</option>
+                </select>
+                <br>
+                <section id = "createFridayRoutine">
+
+                </section>
+                <section id = "createFridayRoutine2">
+
+                </section>
+                <br>
+                <label for="">Private routine?</label>
+                <select id ="privateRoutine">
+                    <option value ="true">Yes</option>
+                    <option value ="false">No</option>
+                </select>
+                <h4>Always do cardio</h4>
+                <!--
+                <input type="text" id="input-goal" name="input-goal" value="{{goal}}" max="30"><br><br>
+                <input type="text" id="input-goal" name="input-goal" value="{{goal}}" max="30"><br><br>
+                <input type="text" id="input-goal" name="input-goal" value="{{goal}}" max="30"><br><br>
+                <input type="text" id="input-goal" name="input-goal" value="{{goal}}" max="30"><br><br>
+                <input type="text" id="input-goal" name="input-goal" value="{{goal}}" max="30"><br><br>
+                <input type="text" id="input-goal" name="input-goal" value="{{goal}}" max="30"><br><br>
+                -->
+                <button onclick="saveNewRoutine(`{{id}}`)">Save routine</button>
+            </form>
+        </div>
+    </div>
+
+     <!-- The Modify Routine Modal -->
+    <div id="modifyRoutineModal" class="modal">
+        <label hidden for="" id ="labelForIDRoutine"></label>
+        <!-- Modal content -->
+        <div class="modal-content">
+           
+            <form action="" class ="modalModifyRoutine">
+                <h3>We recomend to choose 2 muscles for each day.</h3>
+                
+                <label for="">Monday:</label>
+                <select id="First_Muscle_MondayNew" onchange="myExercise('First_Muscle_MondayNew','modifyMondayRoutine')">
+                    <option value="off">off</option>
+                    <option value="Bicep">Bicep</option>
+                    <option value="Tricep">Tricep</option>
+                    <option value="Abs">Abs</option>
+                    <option value="Chest">Chest</option>
+                    <option value="Back">Back</option>
+                    <option value="Legs">Legs</option>
+                </select>
+                <select id="Second_Muscle_MondayNew" onchange="myExercise('Second_Muscle_MondayNew','modifyMondayRoutine2')">
+                    <option value="off">off</option>
+                    <option value="Bicep">Bicep</option>
+                    <option value="Tricep">Tricep</option>
+                    <option value="Abs">Abs</option>
+                    <option value="Chest">Chest</option>
+                    <option value="Back">Back</option>
+                    <option value="Legs">Legs</option>
+                </select>
+                <br>
+                <section id = "modifyMondayRoutine">
+
+                </section>
+                <section id = "modifyMondayRoutine2">
+
+                </section>
+                <br>
+                <label for="">Tuesday:</label>
+                <select id="First_Muscle_TuesdayNew" onchange="myExercise('First_Muscle_TuesdayNew','modifyTuesdayRoutine')">
+                    <option value="off">off</option>
+                    <option value="Bicep">Bicep</option>
+                    <option value="Tricep">Tricep</option>
+                    <option value="Abs">Abs</option>
+                    <option value="Chest">Chest</option>
+                    <option value="Back">Back</option>
+                    <option value="Legs">Legs</option>
+                </select>
+                <select id="Second_Muscle_TuesdayNew" onchange="myExercise('Second_Muscle_TuesdayNew','modifyTuesdayRoutine2')">
+                    <option value="off">off</option>
+                    <option value="Bicep">Bicep</option>
+                    <option value="Tricep">Tricep</option>
+                    <option value="Abs">Abs</option>
+                    <option value="Chest">Chest</option>
+                    <option value="Back">Back</option>
+                    <option value="Legs">Legs</option>
+                </select>
+                <br>
+                <section id = "modifyTuesdayRoutine">
+
+                </section>
+                <section id = "modifyTuesdayRoutine2">
+
+                </section>
+                <br>
+                <label for="">Wednesday:</label>
+                <select id="First_Muscle_WednesdayNew" onchange="myExercise('First_Muscle_WednesdayNew','modifyWednesdayRoutine')">
+                    <option value="off">off</option>
+                    <option value="Bicep">Bicep</option>
+                    <option value="Tricep">Tricep</option>
+                    <option value="Abs">Abs</option>
+                    <option value="Chest">Chest</option>
+                    <option value="Back">Back</option>
+                    <option value="Legs">Legs</option>
+                </select>
+                <select id="Second_Muscle_WednesdayNew" onchange="myExercise('Second_Muscle_WednesdayNew','modifyWednesdayRoutine2')">
+                    <option value="off">off</option>
+                    <option value="Bicep">Bicep</option>
+                    <option value="Tricep">Tricep</option>
+                    <option value="Abs">Abs</option>
+                    <option value="Chest">Chest</option>
+                    <option value="Back">Back</option>
+                    <option value="Legs">Legs</option>
+                </select>
+                <br>
+                <section id = "modifyWednesdayRoutine">
+
+                </section>
+                <section id = "modifyWednesdayRoutine2">
+
+                </section>
+                <br>
+                <label for="">Thursday:</label>
+                <select id="First_Muscle_ThursdayNew" onchange="myExercise('First_Muscle_ThursdayNew','modifyThursdayRoutine')">
+                    <option value="off">off</option>
+                    <option value="Bicep">Bicep</option>
+                    <option value="Tricep">Tricep</option>
+                    <option value="Abs">Abs</option>
+                    <option value="Chest">Chest</option>
+                    <option value="Back">Back</option>
+                    <option value="Legs">Legs</option>
+                </select>
+                <select id="Second_Muscle_ThursdayNew" onchange="myExercise('Second_Muscle_ThursdayNew','modifyThursdayRoutine2')">
+                    <option value="off">off</option>
+                    <option value="Bicep">Bicep</option>
+                    <option value="Tricep">Tricep</option>
+                    <option value="Abs">Abs</option>
+                    <option value="Chest">Chest</option>
+                    <option value="Back">Back</option>
+                    <option value="Legs">Legs</option>
+                </select>
+                <br>
+                <section id = "modifyThursdayRoutine">
+
+                </section>
+                <section id = "modifyThursdayRoutine2">
+
+                </section>
+                <br>
+                <label for="">Friday:</label>
+                <select id="First_Muscle_FridayNew" onchange="myExercise('First_Muscle_FridayNew','modifyFridayRoutine')">
+                    <option value="off">off</option>
+                    <option value="Bicep">Bicep</option>
+                    <option value="Tricep">Tricep</option>
+                    <option value="Abs">Abs</option>
+                    <option value="Chest">Chest</option>
+                    <option value="Back">Back</option>
+                    <option value="Legs">Legs</option>
+                </select>
+                <select id="Second_Muscle_FridayNew" onchange="myExercise('Second_Muscle_FridayNew','modifyFridayRoutine2')">
+                    <option value="off">off</option>
+                    <option value="Bicep">Bicep</option>
+                    <option value="Tricep">Tricep</option>
+                    <option value="Abs">Abs</option>
+                    <option value="Chest">Chest</option>
+                    <option value="Back">Back</option>
+                    <option value="Legs">Legs</option>
+                </select>
+                <br>
+                <section id = "modifyFridayRoutine">
+
+                </section>
+                <section id = "modifyFridayRoutine2">
+
+                </section>
+                <br>
+                <label for="">Private routine?</label>
+                <select id ="privateRoutineNew">
+                    <option value ="true">Yes</option>
+                    <option value ="false">No</option>
+                </select>
+                <h4>Always do cardio</h4>
+                <!--
+                <input type="text" id="input-goal" name="input-goal" value="{{goal}}" max="30"><br><br>
+                <input type="text" id="input-goal" name="input-goal" value="{{goal}}" max="30"><br><br>
+                <input type="text" id="input-goal" name="input-goal" value="{{goal}}" max="30"><br><br>
+                <input type="text" id="input-goal" name="input-goal" value="{{goal}}" max="30"><br><br>
+                <input type="text" id="input-goal" name="input-goal" value="{{goal}}" max="30"><br><br>
+                <input type="text" id="input-goal" name="input-goal" value="{{goal}}" max="30"><br><br>
+                -->
+                <button onclick="saveModifyRoutine(returnIDRoutine(),`{{id}}`)">Save routine</button>
+            </form>
+        </div>
+    </div>
+
+
+
+</div>
+
+<script src="./javascripts/profile.js"></script>
+<script>
+function redirectAll() {
+    window.location.replace("/allusers")
+}
+
+</script>

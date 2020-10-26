@@ -1,0 +1,35 @@
+<link rel='stylesheet' href='/stylesheets/nav-bar.css' />
+<!--
+
+-->
+
+<div class="topnav">
+  <div class="logo">
+      <a href="/" style="padding-bottom: 5px; padding-top:5px">Protocol <span>App</span> </a>
+    </div>
+  <div class="topnav-right">
+
+        <a class="able"href="/">Inicio</a>
+        <!--
+        <a href="/life-style">Protocolos</a>
+        <a href="/nutrition">Equipos</a>
+        <a href="/about-us">Nosotros</a>
+        -->
+        {{#if login}}
+          <a href='/profile'>Profile</a>
+        {{else}}
+          <a href='/login'>Register/login</a>
+        {{/if}}
+  
+  </div>
+</div>
+
+<script>
+    if(false) {
+        document.getElementById('user').outerHTML = "<a href='/profile'>Profile</a>";
+    }
+    else {
+        document.getElementById('user').outerHTML = "<a href='/login'>Register/login</a>";
+    }
+
+</script>

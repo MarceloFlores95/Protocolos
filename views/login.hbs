@@ -1,0 +1,53 @@
+<link rel='stylesheet' href='/stylesheets/login.css' />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div class="hero">
+    <div class="form-box">
+        <div class="button-box">
+            <div id="btn">
+                <button type="button" class="toggle-btn loginButton">Login</button>
+                <button type="button" class="toggle-btn registerButton" >Register</button>
+            </div>
+        </div>
+        
+        {{#if hasErrors}}
+            <div class="">
+                {{# each messages}}
+                <p>{{this}}</p>
+                {{/each}}
+            </div>
+        {{/if}}
+        
+        <form id="login" action="/login/signin" class="input-group" method="POST">
+            <label for="name">E-mail:</label>
+            <input type="text" name="email" class="input-field" placeholder="Email" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" name="password" class="input-field" placeholder="Password" required>
+            <!--<p><a href="#">Forgot your password?</a>-->
+
+            <!--<input type="checkbox"><label class="check" for="checkbox">Keep me logged in</label>-->
+            <button type="submit" value="submit-btn">Log in</button>
+            <input type="hidden" name="_csrf" value="{{csrfToken}}">
+        
+        </form>  
+        <form id="register" action="/login" class="input-group" method="POST">
+            <label for="e-mail">E-mail:</label>
+            <input id="userEmail" name="email" type="text" class="input-field" placeholder="Email" required>
+
+            <label for="name">Username:</label>
+            <input id="userName" name="name" type="text" class="input-field" placeholder="Username" required>
+            
+            <label for="password">Password:</label>
+            <input id="userPassword"  name="password" type="password" class="input-field" placeholder="Password" required>
+            <!--<p><a href="#">Forgot your password?</a>-->
+
+            <!--<input type="checkbox"><label class="check" for="checkbox">Keep me logged in</label>-->
+            <input type="hidden" name="_csrf" value="{{csrfToken}}">
+            <button id="registerButton" type="submit" value="submit-btn">Register</button>
+        
+        </form>   
+    </div>
+</div>
+
+<script src="./javascripts/login.js"></script>

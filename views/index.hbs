@@ -1,0 +1,106 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/stylesheets/home.css">  
+
+<!-- Start Home -->
+  <section class="home wow flash" id="home">
+  	 <div class="container">
+  	 	  <h1 class="wow slideInLeft" data-wow-delay="1s">A <span>new</span> way of working</h1>
+  	 	  <h1 class="wow slideInRight" data-wow-delay="1s">in the<span> Laboratory</span></h1>
+  	 </div>
+  	  <!-- go down -->
+  	      <a href="#about" class="go-down">
+  	      	  <i class="fa fa-angle-down" aria-hidden="true"></i>
+  	      </a>
+  	  <!-- go down -->
+
+  </section>
+<!-- End Home -->
+
+ <!-- Start About -->
+  <section class="about" id="about">
+  	  <div class="container">
+  	  	  <div class="content">
+  	  	  	   <div class="box wow bounceInUp">
+  	  	  	   	   <div class="inner">
+  	  	  	   	   	   <div class="img">
+  	  	  	   	   	   	  <img src="images/about1.jpg" alt="about" />
+  	  	  	   	   	   </div>
+                       <div class="text">
+                       	   <h4>Benefit</h4>
+                       	   <p>Improves shape and physical resistance.
+                              Regulates blood pressure figures.
+                              Increase or maintain bone density.
+                              Improves insulin resistance.
+                              Helps maintain body weight.
+                              Increases muscle tone and strength.
+                              It improves the flexibility and mobility of the joints.</p>
+                       </div>
+  	  	  	   	   </div>
+  	  	  	   </div>
+  	  	  	   	<div class="box wow bounceInUp" data-wow-delay="0.2s">
+  	  	  	   	   <div class="inner">
+  	  	  	   	   	   <div class="img">
+  	  	  	   	   	   	  <img src="images/about2.jpg" alt="about" />
+  	  	  	   	   	   </div>
+                       <div class="text">
+                       	   <h4>Why is important to do exercise</h4>
+                       	   <p>Exercise is an important part of a healthy lifestyle.
+                              Exercise prevents health problems, increases strength,
+                              increases energy and can help reduce stress.
+                              It can also help maintain a healthy body weight and reduce appetite.</p>
+                       </div>
+  	  	  	   	   </div>
+  	  	  	   </div>
+  	  	  	   <div class="box wow bounceInUp" data-wow-delay="0.4s">
+  	  	  	   	   <div class="inner">
+  	  	  	   	   	   <div class="img">
+  	  	  	   	   	   	  <img src="images/about3.jpg" alt="about" />
+  	  	  	   	   	   </div>
+                       <div class="text">
+                       	    <h4>It´ s time</h4>
+                       	   <p>It's time to train with App Fitness. In the coming weeks, 
+								  this app will energize the country with trainings, nutrition tips, and expert help for all the 
+								  strengthened salmon in this experience. Join a community of home athletes.</p>
+                       </div>
+  	  	  	   	   </div>
+  	  	  	   </div>
+  	  	  </div>
+  	  </div>
+  </section>
+ <!-- End About -->
+
+<!-- Start Today -->
+ <section class="start-today">
+ 	<div class="container">
+ 		 <div class="content">
+ 		 	  <div class="box text wow slideInLeft">
+ 		 	  	<h2>Start Your Training Today</h2>
+ 		 	  	 <p>It's time to hop on the summer body bandwagon! 
+              From now until Friday add unlimited tanning to your membership for FREE!</p>
+ 		 	  	 <a href="/login" class="btn">Start Now</a>
+ 		 	  </div>
+ 		 	  <div class="box img wow slideInRight">
+ 		 	  	 <img src="images/gallery4.jpg" alt="start today" />
+ 		 	  </div>
+
+ 		 </div>
+ 	</div>
+ </section>
+<!-- End Start Today -->
+
+ <!-- jquery -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ <script>
+	$(document).ready(function(){
+
+       $(".go-down").click(function(event){
+         if(this.hash !== ""){
+              event.preventDefault();
+              var hash=this.hash; 
+              $('html,body').animate({
+                scrollTop:$(hash).offset().top
+              },800 , function(){
+                 window.location.hash=hash;
+              });
+         }
+      })

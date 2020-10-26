@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap');
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+body{
+	margin:0;
+	padding:0;
+  overflow-x: hidden;
+  /*
+  background-image: url("../images/profile.png");
+  background-repeat: no-repeat;
+  */
+  background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url("../images/profile.png");
+
+  
+}
+
+*{
+	box-sizing: border-box;
+	margin:0;
+	padding:0;
+  font-family: 'Oswald', sans-serif;
+}
+
+h1 {
+  font-size: 400%;
+}
+
+.results {
+  width: 100%;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+/*Profile */
+.titleProfile {
+  text-align: center;
+  padding: 20px;
+}
+
+#profileMenu {
+  display: flex;
+  text-align: left;
+  margin: 0;
+  height: 100vh;
+}
+
+.userInfo {
+  justify-content: justify;
+  background-color: #CACACA;
+  font-size: 150%;
+  width: 100%;
+  height: 70vh;
+  text-align: center;
+  padding: 60px 0;
+
+}
+
+.userInfo img{
+  vertical-align: middle;
+  border-radius: 50%;
+  border: 2px solid black;
+
+}
+
+/* User goal */
+.userProgress {
+  justify-content: justify;
+  background-color: #CACACA;
+  font-size: 150%;
+  width: 100%;
+  height: 70vh;
+  text-align: center;
+  padding: 60px 0;
+}
+
+/* Routine */
+.eachRoutineClass {
+  background-color: #CACACA;
+  padding: 20px 0;
+  text-align: center;
+}
+/*Routines*/
+#createRoutine {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+#modifyRoutine {
+  background-color: blue; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+#eraseRoutine {
+  background-color: red; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.ableUsers {
+  background-color: black; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+/* Exercise */
+.day {
+  background-color: #CACACA;
+  padding: 20px 0;
+  text-align: center;
+  height: 70vh;
+}
+
+/*Goal*/
+.userGoal {
+  background-color: #CACACA;
+  padding: 20px 0;
+  text-align: center;
+  height: 70vh;
+}
+
+#modalGoalInfo {
+  background-color: blue; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+/*Favorite*/
+.eraseFavoriteRoutine {
+  background-color: red; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.vertical-menu {
+  left:0;
+  }
+  
+  .vertical-menu a {
+	  background-color: #7F7F7F;
+	  width: 200px ; 
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    height: 10%;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 120%
+  }
+  
+  .vertical-menu a:hover {
+    background-color: #CACACA;
+  }
+  
+  .vertical-menu a.active {
+    background-color: red;
+    color: white;
+  }
+
+  /* The Modal (background) */
+.modal {
+  margin-bottom: 20px;
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  text-align: justify;
+}
+/* Button */
+.save {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: blue;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 16px;
+  padding: 20px;
+  width: auto;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.save span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.save span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.save:hover span {
+  padding-right: 25px;
+}
+
+.save:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#myProgress {
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  background-color: #ddd;
+  
+}
+
+#myProgressBar {
+  width: 1%;
+  height: 30px;
+  background-color: #4CAF50;
+}

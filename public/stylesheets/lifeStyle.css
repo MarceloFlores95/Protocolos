@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap');
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+body{
+	margin:0;
+	padding:0;
+	overflow-x: hidden;
+}
+
+*{
+	box-sizing: border-box;
+	margin:0;
+	padding:0;
+	font-family: 'Oswald', sans-serif;
+}
+/*lifeStyle Section*/
+
+.lifeStyle{
+	padding:80px 0px 50px;
+	background-color: #ffffff;
+}
+
+.lifeStyle .content{
+	-webkit-display: flex;
+	display: flex;
+}
+
+.lifeStyle .content .box{
+	padding:15px;
+	flex:0 0 50%;
+	max-width: 50%;
+}
+
+.lifeStyle .content .img img{
+	width: 100%;
+	-webkit-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
+
+.lifeStyle .content .text h2{
+    font-size: 30px;
+    font-weight: 500;
+    color: #000000;
+    padding: 0px 0px 20px;
+}
+
+.lifeStyle .content .text p{
+	font-size: 15px;
+    line-height: 20px;
+    color: #000000;
+    margin: 0;
+    padding: 0px 0px 30px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+.lifeStyle .content .class-items .item{
+	margin-bottom: 30px;
+	display: flex;
+}
+.lifeStyle .content .class-items .item:nth-child(1){
+ background-color: #222222;
+}
+.lifeStyle .content .class-items .item:nth-child(2){
+ background-color: #c11325;
+}
+.lifeStyle .content .class-items .item .item-text{
+	padding: 15px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.lifeStyle .content .class-items .item .item-text,
+.lifeStyle .content .class-items .item .item-img{
+	flex:0 0 50%;
+	max-width: 50%;
+	position: relative;
+}
+
+.lifeStyle .content .class-items .item .item-img img{
+ width: 100%;
+ display: block;
+}
+.lifeStyle .content .class-items .item .item-img .price{
+	position: absolute;
+	height: 50px;
+	width: 60px;
+	font-size:20px;
+	font-weight: 500; 
+	color:#ffffff;
+	text-align: center;
+	line-height: 50px;
+}
+.lifeStyle .content .class-items .item:nth-child(1) .item-img .price{
+ background-color: #c11325;
+ left:0;
+ top:0;
+}
+.lifeStyle .content .class-items .item:nth-child(2) .item-img .price{
+ background-color: #222222;
+ right:0;
+ top:0;
+}
+.lifeStyle .content .class-items .item .item-text h4{
+	font-size: 20px;
+    margin: 0;
+    padding: 0px 0px 15px;
+    font-weight: 500;
+    color: #ffffff;
+    text-transform: capitalize;
+    text-align: left;
+}
+
+.lifeStyle .content .class-items .item .item-text p{
+	font-size: 15px;
+    line-height: 20px;
+    color: #ffffff;
+    text-align:left;
+    margin: 0;
+    padding:0 0 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+.lifeStyle .content .class-items .item .item-text a{
+ font-size: 16px;
+ text-decoration: none;
+ display: inline-block;
+}
+
+.lifeStyle .content .class-items .item .item-text a{
+	color:#ffffff;
+}
+
+/*Responsive*/
+
+/*if screen width is less than or equal to 991px then*/
+@media(max-width: 991px){
+  .lifeStyle .content{
+  	flex-wrap: wrap;
+  }
+ .lifeStyle .content .box {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.lifeStyle .content .img{
+	display: none;
+}
+}

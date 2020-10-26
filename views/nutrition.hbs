@@ -1,0 +1,76 @@
+<link rel='stylesheet' href='/stylesheets/nutrition.css' />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+ <!-- Start nutrition -->
+<!--
+ <section class="nutrition" id="nutrition">
+ 	<div class="container">
+ 		 <div class="content">
+ 		 	  <div class="text box wow slideInLeft">
+                  <h2>Nutritions</h2>
+                  <p>Nutrition is the concept that refers to the process by which the body assimilates nutrients 
+                    from food through a series of spontaneous phenomena, 
+                    such as digestion, the absorption of nutrients into the blood through t
+                    he digestive tract and the assimilation of the same by the cells of the organism. And that is why,
+										 thanks to these phenomena carried out by nutrition, the necessary energy is taken to be able to carry out the rest of the vital functions, 
+										 in addition to carrying out daily activities.</p>
+                  <a href="/login" class="btn">Start Now</a>
+ 		 	  </div>
+ 		 	  <div class="accordian box wow slideInRight">
+ 		 	  	    <div class="accordian-container active">
+ 		 	  	    	<div class="head">
+ 		 	  	    		<h4>Nutrition Plans</h4>
+ 		 	  	    		<span class="fa fa-angle-down"></span>
+ 		 	  	    	</div>
+ 		 	  	    	<div class="body">
+ 		 	  	    		<p>Our delicious meal plans are designed by registered dietitians and food experts to help you lose weight, eat more fiber, go vegan and more. Browse dozens of meal plans to find one that's right for you.</p>
+ 		 	  	    	</div>
+ 		 	  	    </div>
+ 		 	  	    <div class="accordian-container">
+ 		 	  	    	<div class="head">
+ 		 	  	    		<h4>One-Week Healthy</h4>
+ 		 	  	    		<span class="fa fa-angle-up"></span>
+ 		 	  	    	</div>
+ 		 	  	    	<div class="body">
+ 		 	  	    		<p>Planning a daily menu isn't difficult as long as each meal and snack have some protein, fiber, complex carbohydrates and a little bit of fat.</p>
+ 		 	  	    	</div>
+ 		 	  	    </div>
+ 		 	  	    <div class="accordian-container">
+ 		 	  	    	<div class="head">
+ 		 	  	    		<h4>Nutrition Tips</h4>
+ 		 	  	    		<span class="fa fa-angle-up"></span>
+ 		 	  	    	</div>
+ 		 	  	    	<div class="body">
+							<p>Eating breakfast will help you start your day with plenty of energy. Don't ruin your breakfast with high-fat and high-calorie foods. Choose some protein and fiber for your breakfast, and it's a good time to eat some fresh fruit.</p>
+ 		 	  	    	</div>
+ 		 	  	    </div>
+ 		 	  	    <div class="accordian-container">
+ 		 	  	    	<div class="head">
+ 		 	  	    		<h4>Other nutritions</h4>
+ 		 	  	    		<span class="fa fa-angle-up"></span>
+ 		 	  	    	</div>
+ 		 	  	    	<div class="body">
+							<p>Dinner is a time when it's easy to over-eat, especially if you haven't eaten much during the day, so watch your portion sizes. Mentally divide your plate into four quarters. One-quarter is for your meat or protein source, one-quarter is for a starch, and the last two-quarters are for green and colorful vegetables or a green salad.</p>
+ 		 	  	    	</div>
+ 		 	  	    </div>
+ 		 	  </div>
+ 		 </div>
+ 	</div>
+ </section>
+ -->
+ <!-- End nutrition -->
+
+ <!-- jquery -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){    
+      $(".accordian-container").click(function(){
+      	$(".accordian-container").children(".body").slideUp();
+      	$(".accordian-container").removeClass("active")
+      	$(".accordian-container").children(".head").children("span").removeClass("fa-angle-down").addClass("fa-angle-up")
+      	$(this).children(".body").slideDown();
+      	$(this).addClass("active")
+      	$(this).children(".head").children("span").removeClass("fa-angle-up").addClass("fa-angle-down")
+      })
+})
+</script>
