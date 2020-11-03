@@ -1,0 +1,26 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel='stylesheet' href='/stylesheets/lifeStyle.css' />
+
+<!-- Start Home -->
+<section class="home" id="home">
+	<form id="publishForm">
+        <label hidden id="userID">{{id}}</label>
+        <label hidden id="userEmail">{{email}}</label>
+        <h1 class= "titleProfile">Welcome {{name}}</h1>
+
+        <div class="form-group">
+            <label for="textAreaForm">Escribe algo</label>
+            <textarea class="form-control" id="textAreaForm" rows="3"></textarea>
+
+            <label for="imageForm">Sube una imagen</label>
+            <input type="file" class="form-control-file" id="imageForm">
+        </div>
+
+        <button id="publisButton">Publicar</button>
+    </form>
+    
+</section>
+
+<script src="./javascripts/home.js"></script>
+
+<!-- End Home -->
