@@ -6,7 +6,7 @@ const commentSchema = mongoose.Schema({
         type: String
     },
     email: {
-        type : mongoose.Schema.Types.ObjectId,
+        type : mongoose.Schema.Types.String,
         ref : 'users',
         required: true
     },
@@ -31,9 +31,14 @@ commentSchema.methods.validPassword = function(password) {
 const commentCollection = mongoose.model('comments', commentSchema);
 
 const Comments = {
-   postComment : function(comment) {
+   postComment : function(comment,email,name) {
+        const data = {
+            userName:name,
+            email: email,
+            comment: comment 
+        }
        return commentCollection // db.students.insert(newStudent)
-                .create(comment)
+                .create(data)
                 .then(createComment =>{
                     return createComment;
                 })

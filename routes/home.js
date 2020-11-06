@@ -20,22 +20,25 @@ router.get('/', isLoggedIn,function(req, res, next) {
 });
 
 /*POST Home*/
-router.post('/:email',[jsonParser,isLoggedIn],(req,res,next) => {
-  let userEmail = req.params.email
-  let userComment = req.body
-  console.log("adios")
-  console.log(userEmail)
-  console.log(userComment)
-  /*
-  Users
-    .addRoutineUser(userID,userRoutine)
-        .then(result => {
-          return res.status(202).json(result)
-        })
-        .catch(err => {
-          return err
-        })
-  */
+router.post('/postComment',[jsonParser,isLoggedIn],(req,res,next) => {
+  let userEmail = req.body.userEmail
+  let userComment = req.body.userComment
+  let userName = req.body.userName
+  // console.log("Entre al router")
+  // console.log(userName)
+  // console.log(userEmail)
+  // console.log(userComment)  
+  
+  Comments
+    .postComment(userComment,userEmail,userName)
+      .then(result => {
+        return res.status(202).json(result)
+      })
+      .catch(err => {
+        return err
+      }) 
+  
+  
 })
 
 module.exports = router;
